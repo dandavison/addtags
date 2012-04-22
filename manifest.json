@@ -1,0 +1,22 @@
+{
+	"name": "AddTags",
+	"version": "0.0",
+	"manifest_version": 2,
+	"description": "Add buttons to wrap textarea selection with HTML tags.",
+	"browser_action": {
+		"default_icon": "tag.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*", "file://*/*"],
+			"css": ["addtags.css"],
+			"js": [
+				"jquery-1.7.2.min.js",
+				"addtags.js"
+			],
+			"run_at": "document_idle",
+			"all_frames": true
+		}
+	]
+
+}
